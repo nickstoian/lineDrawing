@@ -1,0 +1,72 @@
+
+Project 8.1: A line-drawing method, an utility method, for future application.	     
+
+**************************************
+Language: C++
+
+*************************************
+
+I. Input: ask user for an angle (in degree) // to be converted into radians (angle × ? / 180)
+
+II. Outputs: 
+
+      You should have two output files: // Use argv[2] and argv[3].
+
+	- Use argv[1] to do:
+  
+		1) The result of the line-drawing in a 128 X 128 binary image array with header information
+
+	- Use argv[2] for debugging: 
+ 
+		1) Pretty print the result of the binary image array.
+
+
+*******************************
+III. Data structure:
+*******************************
+ - An ImageProcessing class
+
+	- numRows (int) = 128
+	- numCols (int) = 128
+	- minVal (int)  = 0
+	- maxVal (int)  = 1
+	- imgAry (int **) a 2D array, need to dynamically allocate at run time
+			of size numRows by numCols.
+	- rowTranlate (int) = numRows / 2
+	- colTranlate (int) = numCols / 2
+
+	- methods:
+	- constructor(...)
+		- need to dynamically allocate imgAry 
+		- assign values to numRows,..., etc.
+ 		- prettyPrint
+     
+- a lineDrawing class
+	- angleInDegree (double)
+	- angleInRadians (double)
+	
+	methods
+	- drawLine (angle) // orgin is at the center of imgArray
+	- translateRow	
+	- translateCol
+
+*******************************
+III. Algorithms 
+*******************************
+  
+step 0: dynamically allocate imgAry
+
+step 1: angleInDegree <-- ask the user for it
+	   angleInRadians <-- angleInDegree * pi /180
+
+step 2: compute points on the line (in user's given angle)
+	   passing thru the origin, at the center of imgArry.
+
+	
+step 3: output imgArry to argv[1] // don't forget the header!!!
+
+step 4: pretty imgArray to argv[2] 
+
+
+
+
